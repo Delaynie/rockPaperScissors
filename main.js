@@ -1,4 +1,10 @@
 
+// variables
+let playerSelection; // = window.prompt("Rock, paper, or scissors?", "");
+const computerSelection = computerPlay();
+let playerScore = 0;
+let computerScore = 0;
+
 // console.log("It's working!");
 
 /* function for computer play mode to log a random response*/
@@ -27,42 +33,55 @@ function playRound(playerSelection, computerSelection) {
     let player = playerSelection.toLowerCase();
     let computer = computerSelection.toLowerCase();
     if (player == computer) {
-        return "It's a tie!"
+        return "It's a tie! No points awarded."
     }
     // if paper 
     if (player == "paper" && computer == "rock") {
-        return "Paper covers rock, you win!"
+        playerScore = ++playerScore;
+        return "Paper covers rock, one point awarded!"
     } else if (player == "paper" && computer == "scissors") {
-        return "Scissors cuts papers, you lose!"
+        computerScore = ++computerScore;
+        return "Scissors cuts papers, computer get's a point!!"
     }
     //if rock
         else if (player == "rock" && computer == "scissors") {
-            return "Rock breaks scissors, you win!"
+            playerScore = ++playerScore;
+            return "Rock breaks scissors, one point awarded!"
         }   else if (player == "rock" && computer == "paper") {
-            return "Paper covers rock, you lose!"
+            computerScore = ++computerScore;
+            return "Paper covers rock, computer get's a point!"
         }
     //if scissors
             else if (player == "scissors" && computer == "rock") {
-                return "Rock breaks scissors, you lose!"
+                computerScore = ++computerScore;
+                return "Rock breaks scissors, computer get's a point!"
             } else if (player == "scissors" && computer == "paper") {
-              return "Scissors cut paper, you win!"
+                playerScore = ++playerScore;
+              return "Scissors cut paper, you get a point!"
         }
     }       
-
-//let playerSelection = "rock";
-let playerSelection; // = window.prompt("Rock, paper, or scissors?", "");
-const computerSelection = computerPlay();
 
 // console.log(playRound(playerSelection, computerSelection));
 
 function game(playerSelection) {
     let i = 0;
+    console.log("Whoever has the most points after 5 rounds wins!")
     for(i = 0; i < 5; i++){
+        //stuff in the for loop..
         playerSelection = window.prompt("Rock, paper, or scissors?", "");
         let rounds = playRound(playerSelection, computerPlay());
         console.log(rounds);
+        console.log(playerScore);
+        console.log(computerScore);
+     }
+
+    if(playerScore > computerScore) {
+    console.log("\n" + "You win! Congratulations. Refresh the page to play again!");
+    } else if (playerScore < computerScore) {
+        console.log("\n" + "You lost. You suck. How does it feel? Refresh the page to try again.")
+    } else if (playerScore == computerScore) {
+        console.log("Looks like a tie. Refresh the page to try again!");
     }
-    console.log("\n" + "Good game, Champ! Refresh the page to play again");
 }
 
 game(playerSelection);
