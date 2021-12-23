@@ -1,3 +1,11 @@
+/* Notes to future self : 12-22-21
+    * You need to make sure the input from the user get's looped 
+    back if it's not an acceptable input. I've done it before and it's
+    on the tip of my tongue... time to go to sleep.
+    * Change it to where the game only stops once a person reaches 5 
+    points instead of 5 rounds.
+*/
+
 
 // variables
 let playerSelection; // = window.prompt("Rock, paper, or scissors?", "");
