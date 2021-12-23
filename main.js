@@ -1,5 +1,5 @@
 
-console.log("It's working!");
+// console.log("It's working!");
 
 /* function for computer play mode to log a random response*/
 function computerPlay() {
@@ -9,7 +9,6 @@ function computerPlay() {
         arr[2] = "scissors";
     let random = Math.floor(Math.random()*arr.length);
     let randomWord = random;
-    //console.log(arr[randomWord]);
     return arr[randomWord];
 }
 //computerPlay();
@@ -17,38 +16,53 @@ function computerPlay() {
 // game play
 
 function playRound(playerSelection, computerSelection) {
-    //console.log("it's working");
-    console.log(playerSelection, computerSelection);
+   /* trying to figure out how to go from prompting user for correct term to starting the game
+    let tryAgain;
+    if(playerSelection.toLowerCase() != "rock" || 
+    playerSelection.toLowerCase() != "scissors" || 
+    playerSelection.toLowerCase() != "paper") {
+        tryAgain = window.prompt("Please enter rock, paper, or scissors:", "");
+    } */
+    console.log(playerSelection + " " + "vs" + " " + computerSelection);
+    let player = playerSelection.toLowerCase();
+    let computer = computerSelection.toLowerCase();
+    if (player == computer) {
+        return "It's a tie!"
+    }
     // if paper 
-    if (playerSelection == "paper" && computerSelection == "rock") {
-        console.log("Paper covers rock, you win!");
-    } else if (playerSelection == "paper" && computerSelection == "scissors") {
-        console.log("Scissors cuts papers, you lose!");
-    } // if it's a tie
-    else if (playerSelection == computerSelection) {
-        console.log("It's a tie!");
+    if (player == "paper" && computer == "rock") {
+        return "Paper covers rock, you win!"
+    } else if (player == "paper" && computer == "scissors") {
+        return "Scissors cuts papers, you lose!"
     }
     //if rock
-    else if (playerSelection == "rock" && computerSelection == "scissors") {
-        console.log("Rock breaks scissors, you win!");
-    } else if (playerSelection == "rock" && computerSelection == "paper") {
-        console.log("Paper covers rock, you lose!");
-    } // if it's a tie
-    else if (playerSelection == computerSelection) {
-        console.log("It's a tie!");
-    }
+        else if (player == "rock" && computer == "scissors") {
+            return "Rock breaks scissors, you win!"
+        }   else if (player == "rock" && computer == "paper") {
+            return "Paper covers rock, you lose!"
+        }
     //if scissors
-    else if (playerSelection == "scissors" && computerSelection == "rock") {
-        console.log("Rock breaks scissors, you lose!");
-    } else if (playerSelection == "scissors" && computerSelection == "paper") {
-        console.log("Scissors cut paper, you win!");
-    } // if it's a tie
-    else if (playerSelection == computerSelection) {
-        console.log("It's a tie!");
-    }
-}   
+            else if (player == "scissors" && computer == "rock") {
+                return "Rock breaks scissors, you lose!"
+            } else if (player == "scissors" && computer == "paper") {
+              return "Scissors cut paper, you win!"
+        }
+    }       
 
-let playerSelection = "rock";
+//let playerSelection = "rock";
+let playerSelection; // = window.prompt("Rock, paper, or scissors?", "");
 const computerSelection = computerPlay();
 
-game(playerSelection, computerSelection);
+// console.log(playRound(playerSelection, computerSelection));
+
+function game(playerSelection) {
+    let i = 0;
+    for(i = 0; i < 5; i++){
+        playerSelection = window.prompt("Rock, paper, or scissors?", "");
+        let rounds = playRound(playerSelection, computerPlay());
+        console.log(rounds);
+    }
+    console.log("\n" + "Good game, Champ! Refresh the page to play again");
+}
+
+game(playerSelection);
