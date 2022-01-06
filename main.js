@@ -1,16 +1,8 @@
-/* Notes to future self : 12-22-21
-    * Change it to where the game only stops once a person reaches 5 
-    points instead of 5 rounds.
-*/
 
-
-// variables
 let playerSelection; // window.prompt("Rock, paper, or scissors?", "");
 const computerSelection = computerPlay();
 let playerScore = 0;
 let computerScore = 0;
-
-// console.log("It's working!");
 
 /* function for computer play mode to log a random response*/
 function computerPlay() {
@@ -73,7 +65,7 @@ function game(playerSelection) {
     let winner = 50;
     console.log("Whoever gets to 5 points wins the game!")
     for(i = 0; i < winner; i++) {
-        //stuff in the for loop..
+        
         playerSelection = window.prompt("Rock, paper, or scissors?", "");
         rounds = playRound(playerSelection, computerPlay());
         console.log(rounds);
