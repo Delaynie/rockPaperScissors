@@ -25,6 +25,7 @@ body {
     width: 100px;
     height: auto;
     cursor: pointer;
+    border-radius: 5px;
     border: none;
     box-shadow: rgba(77, 76, 76, 0.486) 2px 2px 6px;
 }
@@ -41,8 +42,8 @@ body {
     display: none; /* display: inline-block; after first round*/
     font-size: 1rem;
     width: auto;
-    max-height: 75px;
-    padding: 0.2% 2%;
+    padding: 1% 2%;
+    margin: 1%;
     cursor: pointer;
     border: none;
     border-radius: 5px;
