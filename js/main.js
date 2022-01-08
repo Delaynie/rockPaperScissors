@@ -13,7 +13,7 @@ function play(e) {
     const playerChoice = e.target.id;
     const computerChoice = getComputerChoice();
     const winner = getWinner(playerChoice, computerChoice);
-    console.log(playerChoice, computerChoice, winner)
+    //console.log(playerChoice, computerChoice, winner)
     showWinner(winner, computerChoice);
 }
 
