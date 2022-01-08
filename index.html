@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -13,5 +14,61 @@
 
     
     
+=======
+    <title>Rock Paper Scissors, Shoot!</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/modal.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="container margin-b">Elephant, Cat, Mouse!</h1>
+    </header>
+
+    <section>
+        <h2 class="container margin-b">It's easy...</h2>
+    </section>
+
+    <div class="container">
+        <ul class="margin-b">
+            <li>Elephants stomp the cats, mice scare the elephants, and cats eat the mice!</li>
+            <li>Click the elephant, mouse, or cat to start playing against the computer. </li>
+        </ul>
+    </div>
+
+    <div class="container show">
+        <!-- add a "start now" button that hides when clicked 
+                and makes the rps buttons appear -->
+    </div>
+
+    <div class="container margin-b">
+        <h3>Make your selection:</h3>
+    </div>
+
+    <div class="container choices margin-b">
+        
+            <button id="rock" class="choice img-rock">elephant</button>
+            <button id="paper" class="choice img-paper">mouse</button>
+            <button id="scissors" class="choice img-scissors">cat</button>
+        
+    </div>
+
+    <div id="score" class="container score margin-b">
+        <p>Player: 0</p>
+        <p>Computer: 0</p>
+    </div>
+
+    <div class="container margin-b">
+        <button id="restart" class="restart-btn">Start Over</button>
+    </div>
+
+    <!-- modal content -->
+    <div class="modal">
+        <div id="result" class="modal-content">
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+>>>>>>> rps-ui
 </body>
 </html>
