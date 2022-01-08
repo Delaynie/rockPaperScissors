@@ -1,11 +1,29 @@
+const choices = document.querySelectorAll('.choice');
+const score = document.getElementById('.score');
+const result = document.getElementById('.result');
+const restart = document.getElementById('.restart');
+const modal = document.querySelector('.modal');
+const scoreboard = {
+    player: 0,
+    computer: 0
+}
+//play
+function play(e) {
+    console.log(e.target.id)
+}
 
-let playerSelection; // window.prompt("Rock, paper, or scissors?", "");
+// event listeners
+choices.forEach(choice => choice.addEventListener('click', play));
+
+/* ---------- ORIGINAL CONSOLE EDITION ----------- */
+/*
+let playerSelection;
 const computerSelection = computerPlay();
 let playerScore = 0;
 let computerScore = 0;
 
 /* function for computer play mode to log a random response*/
-function computerPlay() {
+/*function computerPlay() {
     arr = new Array(3);
         arr[0] = "rock";
         arr[1] = "paper";
@@ -20,7 +38,7 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
    
-    console.log(playerSelection + " " + "vs" + " " + computerSelection);
+    //console edish: console.log(playerSelection + " " + "vs" + " " + computerSelection);
     player = playerSelection.toLowerCase();
     computer = computerSelection.toLowerCase();
     if (player == computer) {
@@ -65,7 +83,7 @@ function game(playerSelection) {
     let winner = 50;
     console.log("Whoever gets to 5 points wins the game!")
     for(i = 0; i < winner; i++) {
-        
+
         playerSelection = window.prompt("Rock, paper, or scissors?", "");
         rounds = playRound(playerSelection, computerPlay());
         console.log(rounds);
@@ -85,3 +103,18 @@ function game(playerSelection) {
 }
 
 game(playerSelection);
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const img = button.querySelector("img");
+      playerSelection = img.alt.toLowerCase();
+  
+      playRound(playerSelection, computerSelection);
+  /*
+      if (playerScore === 5 || computerScore === 5) {
+        declareWinner();
+      }*/
+/*
+    });
+  });
+  */
